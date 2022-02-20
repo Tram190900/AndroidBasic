@@ -9,6 +9,10 @@ class layout_code : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_layout_code)
-
+    var btn_code = findViewById<Button>(R.id.btn_code);
+        btn_code.setOnClickListener({
+            val intent = Intent(this, layout_pw_generator::class.java)
+            startActivity(intent)
+        })
     }
 }
