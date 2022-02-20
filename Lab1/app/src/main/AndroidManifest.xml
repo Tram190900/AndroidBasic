@@ -10,9 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Lab1">
         <activity
+            android:name=".layout_pw_generator"
+            android:exported="false"
+            android:label="Password generator"/>
+        <activity
+            android:name=".layout_Profile"
+            android:exported="false"
+            android:label="Profile"/>
+        <activity
             android:name=".layout_code"
             android:exported="false"
-            android:label="Code"/>
+            android:label="Code" />
         <activity
             android:name=".layout_forgetPW"
             android:exported="false"
