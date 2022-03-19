@@ -19,13 +19,11 @@ import com.google.android.material.button.MaterialButtonToggleGroup;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private List<Donut> listDonut;
     private ListView listView;
-    private List<Donut> listPinkDonut;
-    private List<Donut> listFloatingDonut;
-    private List<Donut> listCanTim;
     private DonutAdapter adapter;
 
     @Override
@@ -35,33 +33,26 @@ public class MainActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.idListView);
         listDonut = new ArrayList<>();
-        listDonut.add(new Donut(1,"Tasty Donut","Spicy donut with family","$100","Tasty"));
-        listDonut.add(new Donut(2, "Pink Donut","Spicy donut with family","$100","Pink Donut"));
-        listDonut.add(new Donut(3, "Floating Donut","Spicy donut with family","$100","Floating"));
-        listDonut.add(new Donut(4, "Tasty Donut","Spicy donut with family","$100","Tasty"));
+        listDonut.add(new Donut(R.drawable.donut_yellow_1,"Tasty Donut","Tasty donut with family","$100","Tasty"));
+        listDonut.add(new Donut(R.drawable.donut_red_1, "Pink Donut","Pink donut with family","$130","Pink Donut"));
+        listDonut.add(new Donut(R.drawable.green_donut_1, "Floating Donut","Floating donut with family","$200","Floating"));
+        listDonut.add(new Donut(R.drawable.tasty_donut_1, "Tasty Donut","Spicy donut with family","$100","Tasty"));
 
-        adapter = new DonutAdapter(this, R.layout.item_custom_listview, listDonut);
-        listView.setAdapter(adapter);
+        inDanhSach();
 
         final Button btnDonut = (Button) findViewById(R.id.btnDonut);
         final Button btnPinkDonut = (Button) findViewById(R.id.btnPinkDonut);
         final Button btnFloating = (Button) findViewById(R.id.btnFloating);
-        final EditText etTim = (EditText) findViewById(R.id.tvTim);
+        final EditText edTim = (EditText) findViewById(R.id.tvTim);
 
-        listPinkDonut = listTheoLoai("Pink Donut");
-        DonutAdapter adapterPinkDonut = new DonutAdapter(this,R.layout.item_custom_listview,listPinkDonut);
 
-        listFloatingDonut = listTheoLoai("Floating");
-        DonutAdapter adapterFloatingDonut = new DonutAdapter(this,R.layout.item_custom_listview,listFloatingDonut);
 
-        listCanTim = timTheoTen(etTim.getText().toString());
-        DonutAdapter adapterCanTim = new DonutAdapter(this,R.layout.item_custom_listview,listCanTim);
 
         btnDonut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (btnDonut.isClickable()){
-                    listView.setAdapter(adapter);
+                   inDanhSach();
                 }
 
             }
@@ -70,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btnPinkDonut.isClickable()){
-                    listView.setAdapter(adapterPinkDonut);
+                   listTheoLoai("Pink Donut");
                 }
             }
         });
@@ -78,31 +69,54 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btnFloating.isClickable()){
-                    listView.setAdapter(adapterFloatingDonut);
+                   listTheoLoai("Floating");
                 }
             }
         });
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        edTim.addTextChangedListener(new TextWatcher() {
             @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                if(charSequence.toString().equals("")){
+                    // reset listview
+                    inDanhSach();
+                } else {
+                    // perform search
+                    timTheoTen(charSequence.toString());
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });
     }
-    private List<Donut> listTheoLoai(String loai){
+    private void inDanhSach(){
+        adapter = new DonutAdapter(this, R.layout.item_custom_listview, listDonut);
+        listView.setAdapter(adapter);
+    }
+    private void listTheoLoai(String loai){
         List<Donut> kq = new ArrayList<>();
         for (Donut donut: listDonut) {
             if (donut.getLoai()==loai)
                 kq.add(donut);
         }
-        return kq;
+        adapter = new DonutAdapter(this,R.layout.item_custom_listview,kq);
+        listView.setAdapter(adapter);
     }
-    private List<Donut> timTheoTen(String tenBanh){
+    private void timTheoTen(String tenBanh){
         List<Donut> kq = new ArrayList<>();
-        for (Donut donut: listDonut) {
-            if (donut.getLoai()==tenBanh)
-                kq.add(donut);
+        for(Donut item:listDonut){
+            if(item.getTen().toLowerCase().equals(tenBanh)){
+                kq.add(item);
+            }
         }
-        return kq;
+        adapter = new DonutAdapter(this,R.layout.item_custom_listview,kq);
+        listView.setAdapter(adapter);
     }
 }

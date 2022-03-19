@@ -22,10 +22,10 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@drawable/radius_img"
-            android:paddingLeft="5dp"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
+            android:paddingLeft="7dp"
+            android:paddingTop="7dp"
+            android:paddingRight="7dp"
+            android:paddingBottom="7dp"
             app:srcCompat="@drawable/donut_red_1" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -61,6 +61,7 @@
                 android:id="@+id/tvPrice"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
                 android:text="price"
                 android:textColor="@color/black"
                 android:textSize="20sp"
