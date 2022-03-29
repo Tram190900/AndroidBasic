@@ -1,6 +1,8 @@
 package com.example.ongk;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -61,6 +63,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (btnPinkDonut.isClickable()){
+//                    getSupportFragmentManager().beginTransaction()
+//                            .setReorderingAllowed(true)
+//                            .add(R.id.blankFragment,BlankFragment.class,null)
+//                            .commit();
                    listTheoLoai("Pink Donut");
                 }
             }

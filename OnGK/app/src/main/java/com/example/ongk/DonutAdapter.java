@@ -57,11 +57,11 @@ public class DonutAdapter extends BaseAdapter{
         if (view == null) {
             view = LayoutInflater.from(viewGroup.getContext()).inflate(idLayout, viewGroup, false);
         }
-        TextView tvName = (TextView) view.findViewById(R.id.tvName);
-        TextView tvdescription = (TextView) view.findViewById(R.id.tvDescription);
-        TextView tvPrice = (TextView) view.findViewById(R.id.tvPrice);
-        ImageView imageView = (ImageView) view.findViewById(R.id.logo);
-        final ConstraintLayout contraintLayout = (ConstraintLayout) view.findViewById(R.id.idContraintLayout);
+        TextView tvName = view.findViewById(R.id.tvName);
+        TextView tvdescription = view.findViewById(R.id.tvDescription);
+        TextView tvPrice = view.findViewById(R.id.tvPrice);
+        ImageView imageView = view.findViewById(R.id.logo);
+        final ConstraintLayout contraintLayout = view.findViewById(R.id.idContraintLayout);
         final Donut donut = listDonut.get(position);
         if (listDonut != null && !listDonut.isEmpty()) {
             imageView.setImageResource(donut.getId());
@@ -90,13 +90,13 @@ public class DonutAdapter extends BaseAdapter{
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context,DonutActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putInt("id",listDonut.get(position).getId());
-                bundle.putString("name",listDonut.get(position).getTen());
-                bundle.putString("description",listDonut.get(position).getMoTa());
-                bundle.putString("price",listDonut.get(position).getGia());
-                bundle.putString("loai",listDonut.get(position).getLoai());
-                intent.putExtras(bundle);
+//                Bundle bundle = new Bundle();
+//                bundle.putInt("id",listDonut.get(position).getId());
+//                bundle.putString("name",listDonut.get(position).getTen());
+//                bundle.putString("description",listDonut.get(position).getMoTa());
+//                bundle.putString("price",listDonut.get(position).getGia());
+//                bundle.putString("loai",listDonut.get(position).getLoai());
+                intent.putExtra("selection",donut);
                 context.startActivity(intent);
             }
         });

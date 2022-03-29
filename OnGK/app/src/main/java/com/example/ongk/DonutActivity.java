@@ -2,6 +2,7 @@ package com.example.ongk;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
@@ -18,13 +19,12 @@ public class DonutActivity extends AppCompatActivity {
         TextView tvPrice = (TextView) findViewById(R.id.tvPriceDonut);
         TextView tvDescription = (TextView) findViewById(R.id.tvDescriptionDonut);
 
-        Intent intent = getIntent();
-        Bundle bundle = intent.getExtras();
-        if(bundle!=null){
-            imgDonut.setImageResource(bundle.getInt("id",0));
-            tvName.setText(bundle.getString("name"));
-            tvPrice.setText(bundle.getString("price"));
-            tvDescription.setText(bundle.getString("description"));
+       Donut donut = (Donut) getIntent().getSerializableExtra("selection");
+        if(donut!=null){
+            imgDonut.setImageResource(donut.getId());
+            tvName.setText(donut.getTen());
+            tvPrice.setText(donut.getGia());
+            tvDescription.setText(donut.getMoTa());
         }
     }
 }

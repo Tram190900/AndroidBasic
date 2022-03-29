@@ -1,6 +1,8 @@
 package com.example.ongk;
 
-public class Donut {
+import java.io.Serializable;
+
+public class Donut implements Serializable {
     private int id;
     private String ten;
     private String moTa;
