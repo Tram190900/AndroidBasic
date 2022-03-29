@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/HK2_21_22/TBDD/practice/Lab6_a/app/src/main/res/drawable/btn_magiamgia.xml" value="0.2025" />
+        <entry key="..\:/HK2_21_22/TBDD/practice/Lab6_a/app/src/main/res/drawable/radius_button.xml" value="0.2595" />
+        <entry key="..\:/HK2_21_22/TBDD/practice/Lab6_a/app/src/main/res/drawable/strinking.xml" value="0.2595" />
+        <entry key="..\:/HK2_21_22/TBDD/practice/Lab6_a/app/src/main/res/layout/activity_main.xml" value="0.23842592592592593" />
+        <entry key="..\:/HK2_21_22/TBDD/practice/Lab6_a/app/src/main/res/layout/fragment_above.xml" value="0.536" />
+        <entry key="..\:/HK2_21_22/TBDD/practice/Lab6_a/app/src/main/res/layout/fragment_below.xml" value="0.3150579150579151" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
