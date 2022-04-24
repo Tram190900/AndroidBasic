@@ -12,9 +12,9 @@ public class Facce_screen extends AppCompatActivity {
     private String email;
     private String password;
     private String name;
-    private int smileCount = 0;
-    private int normalCount = 0;
-    private int sadCount = 0;
+    private int smileCount;
+    private int normalCount;
+    private int sadCount;
     private DatabaseHandler db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +28,9 @@ public class Facce_screen extends AppCompatActivity {
 
         Account account = db.getAccount(email);
         name = account.getName();
+        smileCount = account.getSmile();
+        normalCount = account.getNormal();
+        sadCount = account.getSad();
 
         ImageButton btn_smile = findViewById(R.id.btn_Simle);
         ImageButton btn_normal = findViewById(R.id.btn_Normal);
