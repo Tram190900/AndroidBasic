@@ -75,6 +75,7 @@ public class ShoesFragment extends Fragment {
         listShoes.add(new Shoes(R.drawable.shoes_rm_yellow,"Victor shoes-discount 50%"));
         listShoes.add(new Shoes(R.drawable.shoes_white_removebg_preview,"Lining shoes-discount 50%"));
 
+
         lvShoes = view.findViewById(R.id.lv_Shoes);
         adpaterShoes = new AdpaterShoes(getActivity(),R.layout.item_shoes,listShoes);
         lvShoes.setAdapter(adpaterShoes);
