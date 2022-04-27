@@ -72,11 +72,10 @@
 
     <Button
         android:id="@+id/btn_Register"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="191dp"
+        android:layout_height="53dp"
         android:layout_marginStart="60dp"
-        android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="12dp"
         android:backgroundTint="#EF77B0"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
@@ -84,8 +83,6 @@
         android:textSize="18sp"
         app:cornerRadius="40dp"
         app:layout_constraintBottom_toTopOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
@@ -94,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="40dp"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintBottom_toTopOf="@+id/btn_Register"
@@ -122,7 +119,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="16dp"
         android:ems="10"
         android:inputType="textEmailAddress"
         android:text="E-Mail"
@@ -137,7 +134,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="60dp"
         android:layout_marginEnd="60dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:inputType="textPersonName"
         android:text="Name"
@@ -147,9 +144,9 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/img"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="60dp"
         app:layout_constraintBottom_toTopOf="@+id/txtName_Regiter"
@@ -165,7 +162,17 @@
         android:text="CREATE NEW ACCOUNT"
         android:textColor="@color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView9"
-        app:layout_constraintEnd_toStartOf="@+id/imageView9"
-        app:layout_constraintTop_toTopOf="@+id/imageView9" />
+        app:layout_constraintBottom_toBottomOf="@+id/img"
+        app:layout_constraintEnd_toStartOf="@+id/img"
+        app:layout_constraintTop_toTopOf="@+id/img" />
+
+    <Button
+        android:id="@+id/btn_getImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_Register"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btn_Register"
+        app:layout_constraintTop_toTopOf="@+id/btn_Register" />
 </androidx.constraintlayout.widget.ConstraintLayout>

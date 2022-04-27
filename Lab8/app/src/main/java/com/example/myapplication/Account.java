@@ -67,4 +67,13 @@ public class Account {
     public Account(){
 
     }
+
+    @Override
+    public String toString() {
+        return "Account{" +
+                "smile=" + smile +
+                ", normal=" + normal +
+                ", sad=" + sad +
+                '}';
+    }
 }
